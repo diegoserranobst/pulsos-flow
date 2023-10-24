@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pulsos-flow', {
+        category: 'cumbre',
+        defaults: {
+            litros: { value: 100 },
+            intervalo: { value: 60 }
+        },
+        color: '#C0DEED',
+        paletteLabel: "pulsos-flow",
+        inputs: 1,
+        outputs: 1,
+        icon: 'file.png',
+        align: 'right',
+        label: function () {
+            return this.name || 'pulsos-flow';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="pulsos-flow">
+    <div class="form-row">
+    <label for="node-input-url">
+        <i class="icon-tag"></i> Litros por pulso</label>
+        <input type="text" id="node-input-litros" placeholder="100">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url">
+        <i class="icon-tag"></i> Intervalo de tiempo en segundos</label>
+        <input type="text" id="node-input-intervalo" placeholder="60">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="pulsos-flow">
+<p>Pulsos a flujo</p>
+
+Ejemplo entrada:<br />
+<pre>
+var payload = {
+  pulsos: 5,
+  totalizador: [{ value: "1000" }]
+};
+</pre>
+
+Ejemplo salida:<br />
+<pre>
+{ ls: 1000, mt3: 3600, totalizador: 3000 }
+</pre>
+</script>
