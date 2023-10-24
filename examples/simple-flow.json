@@ -1,0 +1,52 @@
+{
+    "id": "example-flow",
+    "label": "Example Flow",
+    "nodes": [
+        {
+            "id": "n1",
+            "type": "inject",
+            "name": "Iniciar",
+            "topic": "",
+            "payload": "{\"pulsos\": 5, \"totalizador\": 100}",
+            "payloadType": "json",
+            "repeat": "",
+            "crontab": "",
+            "once": false,
+            "x": 100,
+            "y": 100,
+            "z": "example-flow",
+            "wires": [
+                [
+                    "n2"
+                ]
+            ]
+        },
+        {
+            "id": "n2",
+            "type": "pulsos-flow",
+            "name": "Pulsos",
+            "litros": 100,
+            "intervalo": 60,
+            "x": 300,
+            "y": 100,
+            "z": "example-flow",
+            "wires": [
+                [
+                    "n3"
+                ]
+            ]
+        },
+        {
+            "id": "n3",
+            "type": "debug",
+            "name": "Debug",
+            "active": true,
+            "console": "false",
+            "complete": "payload",
+            "x": 500,
+            "y": 100,
+            "z": "example-flow",
+            "wires": []
+        }
+    ]
+}
